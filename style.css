@@ -1,0 +1,16 @@
+/* style.css (DR1TRA Homepage v2) */ body { margin: 0; font-family: 'Segoe UI', sans-serif; background-image: url('assets/default.jpg'); background-size: cover; background-position: center; background-attachment: fixed; color: white; text-align: center; overflow-x: hidden; }
+
+/* Search Bar */ .search-wrapper { margin-top: 20px; position: relative; } #searchInput { padding: 14px 20px; width: 90%; max-width: 500px; font-size: 16px; border: none; border-radius: 30px; background: #111; color: white; outline: none; box-shadow: 0 0 10px red; transition: all 0.3s ease-in-out; } #searchInput:focus { transform: scale(1.05); box-shadow: 0 0 14px crimson; }
+
+/* Overlay */ #searchOverlay { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0, 0, 0, 0.8); z-index: 9999; justify-content: center; align-items: center; color: lime; font-size: 22px; }
+
+/* App Shortcuts */ .apps { display: flex; flex-wrap: wrap; justify-content: center; gap: 18px; margin: 20px auto; max-width: 600px; } .app { display: flex; flex-direction: column; align-items: center; text-decoration: none; color: white; width: 72px; } .app img { width: 48px; height: 48px; border-radius: 12px; box-shadow: 0 0 10px rgba(255, 0, 0, 0.6); } .app span { font-size: 12px; margin-top: 5px; color: white; text-decoration: none; }
+
+/* Clock, Weather */ #clock, #weather { margin: 10px auto; font-size: 18px; background: rgba(0, 0, 0, 0.6); padding: 10px 20px; border-radius: 10px; width: fit-content; box-shadow: 0 0 8px red; }
+
+/* Notes */ #notes { margin: 20px auto; width: 90%; max-width: 500px; height: 100px; background: rgba(0, 0, 0, 0.4); color: white; border: 1px solid #444; border-radius: 10px; padding: 10px; resize: none; }
+
+/* Creative Widgets */ #widgetZone { margin-top: 20px; display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; } .widgetBtn { background: #111; color: white; border: 1px solid crimson; border-radius: 12px; padding: 8px 16px; cursor: pointer; font-size: 14px; transition: all 0.3s ease; } .widgetBtn:hover { background: crimson; }
+
+/* Settings */ #settingsLink { position: fixed; bottom: 20px; right: 20px; text-decoration: none; font-size: 16px; background: crimson; color: white; padding: 10px 16px; border-radius: 30px; box-shadow: 0 0 10px red; transition: 0.3s; } #settingsLink:hover { background: #cc0000; }
+

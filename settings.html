@@ -1,0 +1,86 @@
+<!-- settings.html (DR1TRA Settings Final v2) --><!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Settings - DR1TRA</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      border-radius: 10px;
+      border: none;
+      background: #111;
+      color: white;
+      margin-bottom: 10px;
+    }
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 15px;
+    }
+    .setting-section {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 400px;
+      margin: auto;
+      box-shadow: 0 0 12px red;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: crimson;
+    }
+    button {
+      background: crimson;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 12px;
+      cursor: pointer;
+      margin-right: 10px;
+    }
+    button:hover {
+      background: red;
+    }
+  </style>
+  <script defer>
+    window.onload = () => {
+      const get = id => document.getElementById(id);
+      get("bg").value = localStorage.getItem("bg") || "";
+      get("compact").checked = JSON.parse(localStorage.getItem("compact") || "false");
+      get("blurUI").checked = JSON.parse(localStorage.getItem("blurUI") || "false");
+      get("ghostMode").checked = JSON.parse(localStorage.getItem("ghostMode") || "false");get("saveBtn").onclick = () => {
+    localStorage.setItem("bg", get("bg").value);
+    localStorage.setItem("compact", get("compact").checked);
+    localStorage.setItem("blurUI", get("blurUI").checked);
+    localStorage.setItem("ghostMode", get("ghostMode").checked);
+    alert("✅ Settings saved! Reload homepage.");
+  };
+
+  get("resetBtn").onclick = () => {
+    localStorage.clear();
+    alert("🗑 Settings cleared! Reload homepage.");
+  };
+};
+
+  </script>
+</head>
+<body>
+  <div class="setting-section">
+    <h2>⚙ DR1TRA Settings</h2><label>🔲 Background URL:
+  <input type="text" id="bg" placeholder="https://yourimage.jpg" />
+</label>
+
+<label><input type="checkbox" id="compact"> 📦 Enable Compact Mode</label>
+<label><input type="checkbox" id="blurUI"> 🧊 Enable Frost Blur UI</label>
+<label><input type="checkbox" id="ghostMode"> 👻 Enable Ghost Transparency</label>
+
+<br/>
+<button id="saveBtn">💾 Save</button>
+<button id="resetBtn">🗑 Reset</button>
+
+  </div>
+</body>
+</html>
